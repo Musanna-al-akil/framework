@@ -2,7 +2,6 @@
 
 namespace App\Core;
 use PDO;
-use PDOException;
 
 class Database
 {
@@ -47,7 +46,6 @@ class Database
         } else {
             $this->log("All migration are applied");
         }
-
     }
 
     public function createMigrationsTable()
@@ -79,6 +77,10 @@ class Database
     protected function log($message)
     {
         echo '[' . date('Y-m-d H:i:s').'] - ' . $message.PHP_EOL;
+    }  
+
+    public function prepare($sql)
+    {
+        return $this->pdo->prepare($sql);
     }
-    
 }
