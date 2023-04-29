@@ -6,8 +6,19 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use App\Controllers\AuthController;
 use App\Controllers\SiteController;
 use App\Core\Application;
+use Dotenv\Dotenv;
 
-$app = new Application(__DIR__ . "/../");
+$dotenv = Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
+$config = [
+    'db'    => [
+        'dsn'       => $_ENV['DB_DSN'],
+        'user'      => $_ENV['DB_USER'],
+        'password'  => $_ENV['DB_PASSWORD']
+    ]
+    ];
+$app = new Application(__DIR__ . "/../", $config);
 
 $app->router->get('/', [SiteController::class,'home']);
 $app->router->get('/contact', [SiteController::class,'contact']);

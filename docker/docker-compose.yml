@@ -18,3 +18,15 @@ services:
     volumes:
       - ../:/var/www
       - ./nginx:/etc/nginx/conf.d
+  db:
+    container_name: framework-db
+    image: mysql:8.0.32
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+    environment:
+      MYSQL_USER: 123
+      MYSQL_DATABASE: mvc_db
+      MYSQL_PASSWORD: 123
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3308:3306"
