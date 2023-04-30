@@ -1,3 +1,6 @@
+<?php
+/** @var $model \App\Model\User */ ?>
+
 <br>
 <h1>Create an Acount</h1>
 <br>
