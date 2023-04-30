@@ -8,6 +8,7 @@ class Application
 {
     public static $ROOT_DIR;
 
+    public string $layout = 'main';
     public string $userClass;
     public static Application $app;
     public readonly Router $router;
@@ -16,7 +17,7 @@ class Application
     public Session $session;
     public Database $db;
     public ?DbModel $user ;
-    public Controller $controller;
+    public ?Controller $controller = null;
     public function __construct($rootPath, array $config)
     {
         self::$ROOT_DIR = $rootPath;
@@ -35,14 +36,20 @@ class Application
             $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
         }else {
             $this->user = null;
-        }
-        
-        
+        } 
     }
 
     public function run()
     {
-        echo $this->router->resolve();
+        try{
+            echo $this->router->resolve();
+        }catch(\Exception $e){
+            $this->response->setStatusCode($e->getCode());
+
+            echo $this->router->renderView('errors/_error', [
+                'exception' => $e
+            ]);
+        }     
     }
 
     public function login(?DbModel $user)
@@ -50,7 +57,6 @@ class Application
         $this->user = $user;
 
         $primaryKey = $user->primaryKey();
-
         $primaryValue = $user->{$primaryKey};
 
         $this->session->set('user',$primaryValue);

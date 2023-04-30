@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Application;
 use App\Core\Controller;
+use App\Core\Middlewares\AuthMiddleware;
 use App\Core\Request;
 use App\Core\Response;
 use App\Models\LoginForm;
@@ -12,11 +13,16 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthMiddleware(['profile']));
+    }
     public function login(Request $request,Response $response)
     {
         $loginForm = new LoginForm();
         if($request->isPost()) {
             $loginForm->loadData($request->getBody());
+            
             if($loginForm->validate() && $loginForm->login()){
                 $response->redirect('/');
                 return;
@@ -52,5 +58,10 @@ class AuthController extends Controller
     {
         Application::$app->logout();
         $response->redirect('/');
+    }
+
+    public function profile()
+    {
+        return $this->render('profile');
     }
 }
