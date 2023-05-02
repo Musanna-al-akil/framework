@@ -1,5 +1,5 @@
 <?php 
-/** @var \App\Core\View $this*/  
+/** @var \Musanna\MvcCore\View $this*/  
 $this->title = 'Profile'; 
 ?>
 <h1>Profile page</h1>

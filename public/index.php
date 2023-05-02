@@ -1,11 +1,10 @@
 <?php
 
-require_once __DIR__ . "/../core/Config.php";
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use App\Controllers\AuthController;
 use App\Controllers\SiteController;
-use App\Core\Application;
+use Musanna\MvcCore\Application;
 use App\Models\User;
 use Dotenv\Dotenv;
 

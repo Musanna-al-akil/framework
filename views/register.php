@@ -1,13 +1,13 @@
 <?php
 /** @var \App\Models\User $model*/
-/** @var \App\Core\View $this*/ 
+/** @var \Musanna\MvcCore\View $this*/ 
 $this->title = 'Register';
 ?>
 
 <br>
 <h1>Create an Acount</h1>
 <br>
-<?php $form = \App\Core\Form\Form::begin('',"post") ?>
+<?php $form = \Musanna\MvcCore\Form\Form::begin('',"post") ?>
     <div class="row">
         <div class="col">
             <?= $form->field($model, 'firstname') ?>
@@ -20,7 +20,7 @@ $this->title = 'Register';
     <?= $form->field($model, 'password')->passwordField() ?>
     <?= $form->field($model, 'confirmPassword')->passwordField() ?>
     <button type="submit" class="btn btn-primary">Submit</button>
-<?php \App\Core\Form\Form::end() ?>
+<?php \Musanna\MvcCore\Form\Form::end() ?>
 <!--
 <form action="/register" method="post">
     <div class="mb-3">

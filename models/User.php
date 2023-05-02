@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Core\UserModel;
+use Musanna\MvcCore\UserModel;
 
 class User extends UserModel
 {

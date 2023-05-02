@@ -1,6 +1,6 @@
 <?php  
-/** @var \App\Core\View $this*/ 
-use App\Core\Application; 
+/** @var \Musanna\MvcCore\View $this*/ 
+use Musanna\MvcCore\Application; 
 ?>
 <!doctype html>
 <html lang="en">

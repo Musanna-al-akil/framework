@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11a2d20dd6a23c3dc7a8fc1bec48f4e5",
+    "content-hash": "a22319f6debc61ac25bb971797673bde",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -67,6 +67,39 @@
                 }
             ],
             "time": "2023-02-25T20:23:15+00:00"
+        },
+        {
+            "name": "musanna/mvc-framework-core",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Musanna-al-akil/mvc-core.git",
+                "reference": "aeeba61287c3a8b7a736e57f373eaa43a67bd2a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Musanna-al-akil/mvc-core/zipball/aeeba61287c3a8b7a736e57f373eaa43a67bd2a1",
+                "reference": "aeeba61287c3a8b7a736e57f373eaa43a67bd2a1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Musanna\\MvcCore\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "musanna",
+                    "email": "musannaal@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/Musanna-al-akil/mvc-core/issues",
+                "source": "https://github.com/Musanna-al-akil/mvc-core/tree/v1.0.0"
+            },
+            "time": "2023-05-02T17:18:51+00:00"
         },
         {
             "name": "phpoption/phpoption",

@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Core\Application;
-use App\Core\Controller;
-use App\Core\Middlewares\AuthMiddleware;
-use App\Core\Request;
-use App\Core\Response;
+use Musanna\MvcCore\Application;
+use Musanna\MvcCore\Controller;
+use Musanna\MvcCore\Middlewares\AuthMiddleware;
+use Musanna\MvcCore\Request;
+use Musanna\MvcCore\Response;
 use App\Models\LoginForm;
 use App\Models\User;
 

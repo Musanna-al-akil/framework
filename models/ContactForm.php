@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Core\Model;
+use Musanna\MvcCore\Model;
 
 class ContactForm extends Model
 {

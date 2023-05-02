@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Core\Application;
-use App\Core\Model;
+use Musanna\MvcCore\Application;
+use Musanna\MvcCore\Model;
 
 class LoginForm extends Model
 {

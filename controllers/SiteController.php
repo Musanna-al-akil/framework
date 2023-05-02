@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Core\Application;
-use App\Core\Response;
+use Musanna\MvcCore\Application;
+use Musanna\MvcCore\Response;
 use App\Models\ContactForm;
-use App\Core\Controller;
-use App\Core\Request;
+use Musanna\MvcCore\Controller;
+use Musanna\MvcCore\Request;
 
 class SiteController extends Controller
 {
