@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Core;
 
+use App\Core\db\Database;
+
 class Application
 {
     public static $ROOT_DIR;
@@ -16,7 +18,8 @@ class Application
     public readonly Response $response;
     public Session $session;
     public Database $db;
-    public ?DbModel $user ;
+    public ?UserModel $user ;
+    public View $view;
     public ?Controller $controller = null;
     public function __construct($rootPath, array $config)
     {
@@ -25,12 +28,13 @@ class Application
         $this->request  = new Request();
         $this->response = new Response();
         $this->session  = new Session();
+        $this->view     = new View();
         $this->router   = new Router($this->request,$this->response);
 
         $this->db       = new Database($config['db']);
         $this->userClass= $config['userClass'];
 
-        $primaryValue = $this->session->get('user');
+        $primaryValue   = $this->session->get('user');
         if($primaryValue) {
             $primaryKey = $this->userClass::primaryKey();
             $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
@@ -46,13 +50,13 @@ class Application
         }catch(\Exception $e){
             $this->response->setStatusCode($e->getCode());
 
-            echo $this->router->renderView('errors/_error', [
+            echo $this->view->renderView('errors/_error', [
                 'exception' => $e
             ]);
         }     
     }
 
-    public function login(?DbModel $user)
+    public function login(?UserModel $user)
     {
         $this->user = $user;
 

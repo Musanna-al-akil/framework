@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Core\Form;
+
 use App\Core\Model;
 
 class Form
@@ -18,6 +19,6 @@ class Form
 
     public function field(Model $model, $attribute)
     {
-        return new Field($model, $attribute);
+        return new InputField($model, $attribute);
     }
 }

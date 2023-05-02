@@ -1,3 +1,7 @@
+<?php 
+/** @var \App\Core\View $this*/ 
+$this->title = 'Login'; 
+?>
 <br>
 <h1>Login</h1>
 <br>

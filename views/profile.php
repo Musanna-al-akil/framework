@@ -1,8 +1,12 @@
+<?php 
+/** @var \App\Core\View $this*/  
+$this->title = 'Profile'; 
+?>
 <h1>Profile page</h1>
 
 <form action="" method="post">
     <div class="mb-3">
-        <label class="form-label">Subject</label>
+        <la bel class="form-label">Subject</label>
         <input type="text" class="form-control" name="subject">
     </div>
     <div class="mb-3">

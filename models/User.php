@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-
 use App\Core\UserModel;
-
 
 class User extends UserModel
 {
@@ -71,5 +69,4 @@ class User extends UserModel
             'confirmPassword'  => 'Confirm Password',
         ];
     }
-
 }
